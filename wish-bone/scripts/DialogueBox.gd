@@ -22,7 +22,7 @@ signal advanced(idx: int)
 var lines: Array = []
 var idx: int = -1
 var typing := false
-var cps := 60.0
+var cps := 30.0
 var tween: Tween
 var type_tween: Tween            # ✅ declare this
 var panel_height := 280
