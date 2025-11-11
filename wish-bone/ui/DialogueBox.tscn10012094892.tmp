@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgypcwuxa0gx5"]
+
+[ext_resource type="Script" uid="uid://suv4taeskg32" path="res://scripts/DialogueBox.gd" id="1_62fiq"]
+
+[node name="DialogueBox" type="CanvasLayer"]
+layer = 50
+follow_viewport_enabled = true
+script = ExtResource("1_62fiq")
+
+[node name="RootUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Pad" type="MarginContainer" parent="RootUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextBox" type="NinePatchRect" parent="RootUI/Pad"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Row" type="HBoxContainer" parent="RootUI/Pad/TextBox"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 12
+
+[node name="PortraitWrap" type="Control" parent="RootUI/Pad/TextBox/Row"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Portrait" type="TextureRect" parent="RootUI/Pad/TextBox/Row/PortraitWrap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Emoji" type="Label" parent="RootUI/Pad/TextBox/Row/PortraitWrap"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RightCol" type="VBoxContainer" parent="RootUI/Pad/TextBox/Row"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="RootUI/Pad/TextBox/Row/RightCol"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="RootUI/Pad/TextBox/Row/RightCol/Header"]
+layout_mode = 2
+
+[node name="MoodWord" type="Label" parent="RootUI/Pad/TextBox/Row/RightCol/Header"]
+layout_mode = 2
+
+[node name="Dialogue" type="RichTextLabel" parent="RootUI/Pad/TextBox/Row/RightCol"]
+layout_mode = 2
+
+[node name="Hint" type="Label" parent="RootUI/Pad/TextBox"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
